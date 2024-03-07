@@ -17,12 +17,69 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  /* background-image: var(--background-image); */
   color: var(--font-color);
   font-weight: var(--main-weight);
   background-image: 
   repeating-linear-gradient(to right, var(--gradient-lines)),
   repeating-linear-gradient(to bottom, var(--gradient-lines)),
   linear-gradient(var(--gradient-background));
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
 }
 
+.header {
+  display: flex;
+  gap: 25px;
+  margin-block-start: 102px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(375px, 100%, 696px);
+  height: 364px;
+  border: 2px solid var(--main-color);
+  font-family: var(--accent-font);
+  color: var(--main-color);
+
+}
+
+.header__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-transform: uppercase;
+  
+}
+
+.title-title {
+  font-size: 65px;
+}
+
+.title-subtitle {
+  font-size: 23px;
+}
+
+
+.theme-menu__list{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-menu__item button{
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+}
+
+.theme-menu__item button:hover{
+cursor: pointer;
+}
+
+.theme-menu__item button:disabled{
+opacity: 0.6;
+}
