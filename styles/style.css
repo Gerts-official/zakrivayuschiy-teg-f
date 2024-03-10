@@ -86,13 +86,42 @@
   cursor: pointer;
 }
 
-
-
 .theme-menu__item button:disabled,
-.theme-menu__item button:hover {
+.theme-menu__item button:hover,
+.theme-menu__item button:focus {
   transition: opacity 0.3s ease;
   opacity: 0.6;
 }
+
+
+
+.theme-menu__item :not(button:disabled):focus-visible {
+  position: relative;
+}
+
+.theme-menu__item :not(button:disabled):focus-visible::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  border-block-end: 2px solid var(--main-color);
+  animation: menu-underline 0.3s ease;
+  transform-origin: bottom left;
+}
+
+@keyframes menu-underline {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
+
 
 .theme-menu__item button:disabled::before {
   content: "▶";
@@ -100,6 +129,23 @@
   left: -14px;
   opacity: 0.6;
   color: var(--main-color);
+  animation: moving-arrow 1s ease-in-out infinite;
+}
+
+@keyframes moving-arrow {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+  
 }
 
 .main {
@@ -154,6 +200,7 @@
 }
 
 .card__like-button {
+  position: relative;
   margin-inline-end: 23px;
   margin-block-end: 25px;
   font-size: 14px;
@@ -164,19 +211,67 @@
 }
 
 .button__text {
+  position: relative;
+  z-index: 1;
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: var(--main-weight);
   line-height: 90%;
+  mix-blend-mode: difference;
+  color: var(--like-button-hover);
+}
+
+.button-hover-animation {
+  position: relative;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0 1px var(--main-color);
+  transition: 0.3s ease;
+}
+
+.card__like-button:hover,
+.button-safe:hover{
+  cursor: pointer;
+  
+}
+
+
+
+.button-hover-animation:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: like-button-hover 0.5s ease-in-out forwards;
+  transform-origin: center left;
+}
+
+@keyframes like-button-hover {
+
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+    background-color: var(--main-color);
+  }
 }
 
 .button-safe {
-margin-block: 54px;
-display: flex;
-align-items: center;
-gap: 8px;
-padding: 10px 25px;
-border: 2px solid var(--main-color);
+  margin-block: 54px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 25px;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+}
+
+.floppy {
+  color: var(--like-button-hover);
+  mix-blend-mode: difference;
+  z-index: 1;
 }
 
 .card-label {
