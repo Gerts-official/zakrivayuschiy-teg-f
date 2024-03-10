@@ -1,0 +1,44 @@
+
+
+
+
+
+
+
+
+.button-hover-animation:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    animation: like-button-hover 0.5s ease-in-out forwards;
+    transform-origin: center left;
+  }
+
+
+.button-safe {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-block: 54px;
+    padding: 10px 25px;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    background-color: var(--background-color);
+  }
+  
+  .floppy {
+    z-index: 1;
+    color: var(--like-button-hover);
+    mix-blend-mode: difference;
+  }
+
+  .button__text {
+    position: relative;
+    z-index: 1;
+    font-family: var(--accent-font);
+    font-size: 14px;
+    font-weight: var(--main-weight);
+    line-height: 90%;
+    mix-blend-mode: difference;
+    color: var(--like-button-hover);
+  }

@@ -14,46 +14,50 @@
 
 */
 
+/* Общие стили страницы */
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--font-color);
   font-weight: var(--main-weight);
   background-image: 
-  repeating-linear-gradient(to right, var(--gradient-lines)),
+    repeating-linear-gradient(to right, var(--gradient-lines)),
     repeating-linear-gradient(to bottom, var(--gradient-lines)),
     linear-gradient(var(--gradient-background));
   background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-position: center;
   background-size: cover;
+  
 }
 
+/* Стили контента */
 .content-styles {
-  width: clamp(375px, 100%, 696px);
   color: var(--main-color);
+  width: clamp(375px, 100%, 696px);
 }
 
+/* Стили заголовка */
 .header {
   display: flex;
-  gap: 23px;
-  margin-block-start: 102px;
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  margin-block-start: 102px;
   block-size: clamp(20.1875rem, 19.2852rem + 3.8498vw, 22.75rem);
+  gap: 23px;
   border: 2px solid var(--main-color);
-  font-family: var(--accent-font);
   background-color: var(--background-color);
+  font-family: var(--accent-font);  
 }
 
 .header__title {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   gap: 20px;
   text-transform: uppercase;
 }
@@ -66,6 +70,7 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
+/* Стили меню */
 .theme-menu__list {
   display: flex;
   flex-direction: column;
@@ -75,11 +80,11 @@
 }
 
 .theme-menu__item button {
-  text-transform: uppercase;
-  border: none;
-  background-color: transparent;
   position: relative;
+  background-color: transparent;
+  border: none;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 .theme-menu__item :not(button:disabled):hover {
@@ -89,11 +94,9 @@
 .theme-menu__item button:disabled,
 .theme-menu__item button:hover,
 .theme-menu__item button:focus {
-  transition: opacity 0.3s ease;
   opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
-
-
 
 .theme-menu__item :not(button:disabled):focus-visible {
   position: relative;
@@ -118,9 +121,7 @@
   100% {
     transform: scaleX(1);
   }
-}
-
-
+} 
 
 
 .theme-menu__item button:disabled::before {
@@ -144,19 +145,18 @@
   100% {
     transform: translateX(0);
   }
-
-  
 }
 
+/* Стили карточек */
 .main {
   margin-block-start: 102px;
 }
 
 .card {
-  border: 2px solid var(--main-color);
   font-family: var(--main-font);
   font-size: 18px;
   background-color: var(--background-color);
+  border: 2px solid var(--main-color);
 }
 
 .card__header {
@@ -179,35 +179,38 @@
 }
 
 .card__paragraph {
-  padding: 27px 27px 25px 23px;
   display: flex;
   flex-direction: column;
   gap: 27px;
+  padding: 27px 27px 25px 23px;
   font-weight: var(--main-weight);
   line-height: 21px;
 }
 
 .card__like-container {
   display: flex;
-  justify-content: end;
   align-items: start;
+  justify-content: end;
   padding-block-start: 1px;
+  gap: 8px;
 }
 
 .card__icon-button {
+  display: flex;
+  margin-block-start: 2px;
   border: none;
   background-color: var(--background-color);
+  padding: 0;
 }
 
 .card__like-button {
-  position: relative;
-  margin-inline-end: 23px;
-  margin-block-end: 25px;
   font-size: 14px;
-  padding: 10px 35px;
   font-family: var(--accent-font);
+  padding: 10px 35px;
   background-color: var(--background-color);
   border: 2px solid var(--main-color);
+  margin-inline-end: 23px;
+  margin-block-end: 25px;
 }
 
 .button__text {
@@ -225,18 +228,21 @@
   position: relative;
 }
 
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 1px var(--main-color);
+.card__like-button:focus-visible,
+.button-safe:focus-visible {
   transition: 0.3s ease;
+  box-shadow: 2px 2px 0 1px var(--main-color);
+}
+
+.card__icon-button:focus-visible {
+  transition: 0.3s ease;
+  outline: 2px solid var(--main-color);
 }
 
 .card__like-button:hover,
 .button-safe:hover{
   cursor: pointer;
-  
 }
-
-
 
 .button-hover-animation:hover::after {
   content: "";
@@ -259,38 +265,39 @@
 }
 
 .button-safe {
-  margin-block: 54px;
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-block: 54px;
   padding: 10px 25px;
   border: 2px solid var(--main-color);
-  color: var(--main-color);
+  background-color: var(--background-color);
 }
 
 .floppy {
+  z-index: 1;
   color: var(--like-button-hover);
   mix-blend-mode: difference;
-  z-index: 1;
 }
 
 .card-label {
-position: absolute;
-top: 25px;
-right:11px;
-color: var(--main-color);
-font-family: var(--accent-font);
-font-size: 14px;
-font-weight: var(--main-weight);
-text-transform: uppercase;
-text-shadow: 
--1px -1px 0 var(--background-color),  
-1px -1px 0 var(--background-color),
--1px 1px 0 var(--background-color),
-1px 1px 0 var(--background-color);
-opacity: 0.5;
+  position: absolute;
+  top: 25px;
+  right: 11px;
+  color: var(--main-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-weight);
+  text-transform: uppercase;
+  text-shadow: 
+    -1px -1px 0 var(--background-color),  
+    1px -1px 0 var(--background-color),
+    -1px 1px 0 var(--background-color),
+    1px 1px 0 var(--background-color);
+  opacity: 0.5;
 }
 
+/* Поддержка тестового эффекта тени для надписи */
 @supports((text-stroke: 2px var(--background-color)) or (-webkit-text-stroke: 2px var(--background-color))) {
   .card-label {
       -webkit-text-stroke: 1px var(--background-color);
