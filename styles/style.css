@@ -82,11 +82,15 @@
   font-size: 14px;
 }
 
-.theme-menu__item button:hover {
+.theme-menu__item :not(button:disabled):hover {
   cursor: pointer;
 }
 
-.theme-menu__item button:disabled {
+
+
+.theme-menu__item button:disabled,
+.theme-menu__item button:hover {
+  transition: opacity 0.3s ease;
   opacity: 0.6;
 }
 
@@ -102,29 +106,33 @@
   margin-block-start: 102px;
 }
 
-.article {
+.card {
   border: 2px solid var(--main-color);
   font-family: var(--main-font);
   font-size: 18px;
   background-color: var(--background-color);
 }
 
-.article__header {
+.card__header {
   border-block-end: 2px solid var(--main-color);
   padding: 2px 9px;
 }
 
-.article__header-title {
+.card__header-title {
   font-size: inherit;
   line-height: normal;
   padding: 2px 0;
 }
 
-.article__image-picture {
+.card__image {
+  position: relative;
+}
+
+.card__image-picture {
   inline-size: 100%;
 }
 
-.article__paragraph {
+.card__paragraph {
   padding: 27px 27px 25px 23px;
   display: flex;
   flex-direction: column;
@@ -133,13 +141,19 @@
   line-height: 21px;
 }
 
-.article__like {
+.card__like-container {
   display: flex;
   justify-content: end;
   align-items: start;
+  padding-block-start: 1px;
 }
 
-.article__button {
+.card__icon-button {
+  border: none;
+  background-color: var(--background-color);
+}
+
+.card__like-button {
   margin-inline-end: 23px;
   margin-block-end: 25px;
   font-size: 14px;
@@ -148,3 +162,44 @@
   background-color: var(--background-color);
   border: 2px solid var(--main-color);
 }
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-weight);
+  line-height: 90%;
+}
+
+.button-safe {
+margin-block: 54px;
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 10px 25px;
+border: 2px solid var(--main-color);
+}
+
+.card-label {
+position: absolute;
+top: 25px;
+right:11px;
+color: var(--main-color);
+font-family: var(--accent-font);
+font-size: 14px;
+font-weight: var(--main-weight);
+text-transform: uppercase;
+text-shadow: 
+-1px -1px 0 var(--background-color),  
+1px -1px 0 var(--background-color),
+-1px 1px 0 var(--background-color),
+1px 1px 0 var(--background-color);
+opacity: 0.5;
+}
+
+@supports((text-stroke: 2px var(--background-color)) or (-webkit-text-stroke: 2px var(--background-color))) {
+  .card-label {
+      -webkit-text-stroke: 1px var(--background-color);
+      text-stroke: 1px var(--background-color);
+      text-shadow: none;
+  }
+} 
