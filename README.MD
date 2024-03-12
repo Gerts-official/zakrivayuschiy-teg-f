@@ -1,1 +1,1 @@
-https://gerts-official.github.io/zakrivayuschiy-teg-f/
+https://github.com/Gerts-official/zakrivayuschiy-teg-f
