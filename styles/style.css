@@ -23,6 +23,7 @@
   min-block-size: 100dvb;
   color: var(--font-color);
   font-weight: var(--main-weight);
+  background-color: var(--background-color);
   background-image: repeating-linear-gradient(to right, var(--gradient-lines)),
     repeating-linear-gradient(to bottom, var(--gradient-lines)),
     linear-gradient(var(--gradient-background));
