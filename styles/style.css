@@ -23,14 +23,12 @@
   min-block-size: 100dvb;
   color: var(--font-color);
   font-weight: var(--main-weight);
-  background-image: 
-    repeating-linear-gradient(to right, var(--gradient-lines)),
+  background-image: repeating-linear-gradient(to right, var(--gradient-lines)),
     repeating-linear-gradient(to bottom, var(--gradient-lines)),
     linear-gradient(var(--gradient-background));
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  
 }
 
 /* Стили контента */
@@ -50,7 +48,7 @@
   gap: 23px;
   border: 2px solid var(--main-color);
   background-color: var(--background-color);
-  font-family: var(--accent-font);  
+  font-family: var(--accent-font);
 }
 
 .header__title {
@@ -121,8 +119,7 @@
   100% {
     transform: scaleX(1);
   }
-} 
-
+}
 
 .theme-menu__item button:disabled::before {
   content: "▶";
@@ -214,6 +211,10 @@
   height: 38px;
 }
 
+.card-margin {
+  margin-block-start: 45px;
+}
+
 .button__text {
   position: relative;
   z-index: 1;
@@ -242,7 +243,8 @@
 
 .card__like-button:hover,
 .button-safe:hover,
-.like-icon {
+.like-icon,
+.dialog-button {
   cursor: pointer;
 }
 
@@ -271,22 +273,130 @@
   font-size: 14px;
   font-weight: var(--main-weight);
   text-transform: uppercase;
-  text-shadow: 
-    -1px -1px 0 var(--background-color),  
-    1px -1px 0 var(--background-color),
-    -1px 1px 0 var(--background-color),
+  text-shadow: -1px -1px 0 var(--background-color),
+    1px -1px 0 var(--background-color), -1px 1px 0 var(--background-color),
     1px 1px 0 var(--background-color);
   opacity: 0.5;
 }
 
-/* Поддержка тестового эффекта тени для надписи */
-@supports((text-stroke: 2px var(--background-color)) or (-webkit-text-stroke: 2px var(--background-color))) {
-  .card-label {
-      -webkit-text-stroke: 1px var(--background-color);
-      text-stroke: 1px var(--background-color);
-      text-shadow: none;
-  }
+/* DIALOG */
+.dialog[open] {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  min-width: 306px;
+  background-color: var(--background-color);
+  padding: 31.5px 32.5px 31.5px 31.5px;
+  border: 2px solid var(--main-color);
+}
+
+.svg-title__container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.floppy-dialog {
+  color: var(--main-color);
+  inline-size: 30%;
+
+}
+
+.dialog__message {
+  color: var(--main-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--main-weight);
+  line-height: 150%;
+  text-transform: uppercase;
+  max-width: 234px;
+}
+
+.dialog-form {
+  display: block;
+  width: 100%;
+}
+
+.dialog-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  font-family: var(--accent-font);
+  padding: 9px 17px;
+  inline-size: 100%;
+  border: 2px solid var(--main-color);
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(7px);
 } 
 
 
+/* Поддержка тестового эффекта тени для надписи */
+@supports (
+  (text-stroke: 2px var(--background-color)) or
+    (-webkit-text-stroke: 2px var(--background-color))
+) {
+  .card-label {
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
+    text-shadow: none;
+    letter-spacing: 4px;
+  }
+}
 
+/* FILTERS START */
+.card__image-picture {
+  filter: brightness(70%);
+}
+.filter-scary {
+  filter: brightness(70%);
+}
+.card__paragraph {
+  filter: brightness(80%);
+}
+
+.filter-know {
+  filter: blur(1px);
+}
+
+.filter-superman {
+  filter: contrast(90%);
+}
+
+.filter-perfection {
+  filter: blur(1px);
+}
+
+.filter-friends {
+  filter: brightness(90%);
+  filter: blur(0.08rem);
+  filter: invert(10%);
+}
+
+.filter-think {
+  filter: blur(1px);
+  filter: brightness(70%);
+}
+
+
+.filter-time {
+  filter: blur(2px);
+  filter: contrast(200%);
+}
+/* FILTERS END */
+
+
+@media (max-width: 500px) {
+
+  .button-safe {
+    flex-direction: column;
+  }
+}

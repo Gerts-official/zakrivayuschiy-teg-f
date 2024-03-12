@@ -30,18 +30,29 @@
 
 
 
-/* @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
+ :root {
+    --main-weight: 400;
+    --main-weight-title: 700;
+    --accent-weight: 400;
+    --main-color: #000;
+    --gradient-lines: #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px;
+    --gradient-background: #e7e7e7 0.01%, #1a1a1a 100%;
+    --background-color: #FFFFFF;
+    --like-button-hover: #ffffff;
+}
+}
 
-    .page {
-  
-    --backgound-image: url(../images/cover-image-light.png);
-    --background-color: #fff1f7;
-    --title-color: #ffc2e6;
-    --menu-color: #353430;
-    --accent-color: #ff8dcb;
-    --paragraph-text-color: #353430;
-    --article-heading-color: #353430;
-    --accent-text-color: #353430;
-    --outline-button: rgb(53 52 48 / 0.4);
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-weight: 465;
+        --main-weight-title: 785;
+        --accent-weight: 400;
+        --main-color: #00CC14;
+        --gradient-lines: #000, #000 2px, transparent 2px, transparent 4px;
+        --gradient-background: #007f0c 0.01%, #004306 100%;
+        --background-color: #000000;
+        --like-button-hover: #00CC14;
     }
-} */
+   }
