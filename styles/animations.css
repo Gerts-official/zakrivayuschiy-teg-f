@@ -82,7 +82,7 @@
   }
 
 .like-icon.is-liked {
-    animation: heart-scale .3s ease-in .1s;
+    animation: heart-scale .3s ease-in .1s alternate;
 } 
 
 @keyframes heart-scale {
@@ -105,7 +105,7 @@
 }
 
 .like-icon.is-liked .sparks {
-    animation: heart-sparks .3s ease-in .3s;
+    animation: heart-sparks .3s ease-in .3 alternate;
 }
 
 @keyframes heart-sparks {

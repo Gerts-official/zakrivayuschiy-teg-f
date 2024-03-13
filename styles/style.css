@@ -36,7 +36,7 @@
 /* Стили контента */
 .content-styles {
   color: var(--main-color);
-  width: clamp(375px, 100%, 696px);
+  width: clamp(375px, 100%, 700px);
 }
 
 /* Стили заголовка */
@@ -183,19 +183,27 @@
 
 .card__image {
   position: relative;
+  /* max-height: 692px; */
+  border-block-end: 1px solid green;
 }
 
 .card__image-picture {
+  /* inline-size: 100%;
+  height: 100%; */
+  block-size: 100%;
   inline-size: 100%;
+  object-fit: cover;
+  border-block-end: 1px solid red;
 }
 
 .card__paragraph {
   display: flex;
   flex-direction: column;
   gap: 27px;
-  padding: 27px 27px 25px 23px;
+  padding: 20px 27px 25px 25px;
   font-variation-settings: var(--main-weight);
   line-height: 21px;
+  border-block-start: 1px solid red;
 }
 
 .card__like-container {
@@ -228,7 +236,7 @@
 }
 
 .card-margin {
-  margin-block-start: 45px;
+  margin-block-start: 51px;
 }
 
 .button__text {
@@ -282,7 +290,7 @@
 
 .card-label {
   position: absolute;
-  top: 26px;
+  top: 25px;
   right: 25px;
   color: var(--main-color);
   font-family: var(--accent-font);
@@ -411,6 +419,23 @@ dialog::backdrop {
 
   .dialog[open] {
     padding: 32px 42px;
+  }
+
+  .card__paragraph {
+    padding: 20px 29px 25px 25px;
+  }
+
+  .card__header {
+    padding: 4px 10px 0 10px;
+  }
+
+  .card-label {
+    top: 23px;
+    right: 11px;
+  }
+
+  .card-margin {
+    margin-block-start: 50px;
   }
 
 }
