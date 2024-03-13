@@ -63,7 +63,14 @@
 
 .title-title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
 }
+
+.title-title:focus,
+.title-title:focus-visible {
+  outline: none;
+}
+
 
 .title-subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
@@ -76,6 +83,7 @@
   gap: 11px;
   margin-block-end: 24px;
   padding-inline-start: 19px;
+  
 }
 
 .theme-menu__item button {
@@ -84,6 +92,7 @@
   border: none;
   font-size: 14px;
   text-transform: uppercase;
+  transition: opacity .3s ease;
 }
 
 .theme-menu__item :not(button:disabled):hover {
@@ -94,8 +103,9 @@
 .theme-menu__item button:hover,
 .theme-menu__item button:focus {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
+
+
 
 .theme-menu__item :not(button:disabled):focus-visible {
   position: relative;
@@ -126,6 +136,7 @@
   content: "▶";
   position: absolute;
   left: -14px;
+  top: 0;
   opacity: 0.6;
   color: var(--main-color);
   animation: moving-arrow 1s ease-in-out infinite;
@@ -197,6 +208,7 @@
   border: none;
   background-color: var(--background-color);
   padding: 0;
+  transition: .3s ease;
 }
 
 .card__like-button {
@@ -210,6 +222,7 @@
   padding: 9px 17px;
   width: 130px;
   height: 38px;
+  transition: .3s ease;
 }
 
 .card-margin {
@@ -233,12 +246,10 @@
 
 .card__like-button:focus-visible,
 .button-safe:focus-visible {
-  transition: 0.3s ease;
   box-shadow: 2px 2px 0 1px var(--main-color);
 }
 
 .card__icon-button:focus-visible {
-  transition: 0.3s ease;
   outline: 2px solid var(--main-color);
 }
 
@@ -253,10 +264,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-block: 54px;
   padding: 10px 25px;
   border: 2px solid var(--main-color);
   background-color: var(--background-color);
+  transition: .3s ease;
 }
 
 .floppy {
@@ -274,10 +285,19 @@
   font-size: 14px;
   font-weight: var(--main-weight);
   text-transform: uppercase;
-  text-shadow: -1px -1px 0 var(--background-color),
-    1px -1px 0 var(--background-color), -1px 1px 0 var(--background-color),
+  text-shadow: 
+    -1px -1px 0 var(--background-color),
+    1px -1px 0 var(--background-color), 
+    -1px 1px 0 var(--background-color),
     1px 1px 0 var(--background-color);
   opacity: 0.5;
+}
+
+.safe-button-section {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 54px;
+  margin-block-end: 103px;
 }
 
 /* DIALOG */
@@ -335,8 +355,7 @@
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
+  background-color: rgba(0, 0, 0, 0.75);
 } 
 
 
@@ -354,43 +373,28 @@ dialog::backdrop {
 }
 
 /* FILTERS START */
-.card__image-picture {
+.filter__brightness {
   filter: brightness(70%);
-}
-.filter-scary {
-  filter: brightness(70%);
-}
-.card__paragraph {
-  filter: brightness(80%);
 }
 
-.filter-know {
+.filter__blur {
   filter: blur(1px);
 }
 
-.filter-superman {
+.filter__brightness-blur {
+  filter: brightness(70%) blur(1px);
+}
+
+.filter__contrast {
   filter: contrast(90%);
 }
 
-.filter-perfection {
-  filter: blur(1px);
-}
-
-.filter-friends {
-  filter: brightness(90%);
-  filter: blur(0.08rem);
+.filter__invert {
   filter: invert(10%);
 }
 
-.filter-think {
-  filter: blur(1px);
-  filter: brightness(70%);
-}
-
-
-.filter-time {
-  filter: blur(2px);
-  filter: contrast(200%);
+.filter__super-contrast-blur {
+  filter: contrast(200%) blur(1px);
 }
 /* FILTERS END */
 
