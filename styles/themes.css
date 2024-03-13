@@ -6,8 +6,8 @@
 */
 
 :root.theme-dark {
-    --main-weight: 465;
-    --main-weight-title: 785;
+    --main-weight: 'wght' 465;
+    --main-weight-title: 'wght' 785;
     --accent-weight: 400;
     --main-color: #00CC14;
     --gradient-lines: #000, #000 2px, transparent 2px, transparent 4px;
@@ -18,8 +18,8 @@
 
 
 :root.theme-light{
-    --main-weight: 400;
-    --main-weight-title: 700;
+    --main-weight: 'wght' 400;
+    --main-weight-title: 'wght' 700;
     --accent-weight: 400;
     --main-color: #000;
     --gradient-lines: #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px;
