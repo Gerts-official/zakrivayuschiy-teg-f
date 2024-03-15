@@ -32,7 +32,7 @@
 /* Heart animation HOVER */
   .core {
   fill: var(--background-color);
-  transition:fill .3s linear .3s;
+  transition: fill .3s linear .03s;
 }
 
   .main-body {
@@ -47,7 +47,7 @@
 
 .like-icon:hover .main-body {
   fill: var(--main-color);
-  transition: fill 0.3s linear .5s ;
+  transition: fill .3s linear .05s ;
 }
 
 /* Heart animation :ACTIV */
@@ -58,12 +58,13 @@
   
 .like-icon:active .main-body {
     fill: red;
-    transition: fill 0.3s linear .5s ;
+    transition: fill .3s linear .05s ;
   }
 
 /* Heart animation IS-LIKED */
 .contour {
     fill: var(--main-color);
+    transition: fill .1s linear;
     }
   
 .like-icon.is-liked .core {
@@ -73,12 +74,12 @@
   
 .like-icon.is-liked .main-body {
     fill: red;
-    transition: fill 0.3s linear .5s ;
+    transition: fill 0.3s linear .05s ;
   }
 
 .like-icon.is-liked .contour {
     fill: red;
-    transition: fill 0.3s linear .6s ;
+    transition: fill 0.3s linear .06s ;
   }
 
 .like-icon.is-liked {
