@@ -106,7 +106,7 @@
 }
 
 .like-icon.is-liked .sparks {
-    animation: heart-sparks .3s ease-in .3 alternate;
+    animation: heart-sparks .3s ease-in .3s alternate;
 }
 
 @keyframes heart-sparks {
@@ -114,12 +114,8 @@
         opacity: 0;
     }
 
-    50% {
-        opacity: 1;
-    }
-
     to {
-        opacity: 0;
+        opacity: 1;
     }
 }
 
