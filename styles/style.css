@@ -280,16 +280,18 @@ max-height: fit-content;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 0;
+  padding: 15px 0;
   border: 2px solid var(--main-color);
   background-color: var(--background-color);
   transition: .3s ease; 
 }
 
-.floppy {
+#floppy {
   z-index: 1;
   color: var(--like-button-hover);
   mix-blend-mode: difference;
+  width: 21px;
+  height: 21px;
 }
 
 .card-label {
@@ -446,4 +448,10 @@ dialog::backdrop {
     margin-block-start: 50px;
   }
 
+  #floppy {
+    width: 28px;
+    height: 28px;
+  }
 }
+
+
